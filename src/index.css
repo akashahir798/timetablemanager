@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. 
+   1. Base Palette (The "What")
+   2. Semantic Variables (The "Where")
+*/
+
+@layer base {
+  :root {
+    /* ----------------------------------------------------
+       1. Base Palette (The "What") - HSL Channels
+       ---------------------------------------------------- */
+    
+    /* Olive Palette - Premium, Organic, Attractive */
+    --color-olive-50:  84 30% 96%;
+    --color-olive-100: 84 25% 92%;
+    --color-olive-200: 84 25% 84%;
+    --color-olive-300: 84 30% 74%;
+    --color-olive-400: 84 35% 60%;
+    --color-olive-500: 84 45% 48%; /* Smooth Olive */
+    --color-olive-600: 84 50% 38%; /* Deep Rich Olive for Primary */
+    --color-olive-700: 84 55% 30%;
+    --color-olive-800: 84 60% 22%;
+    --color-olive-900: 84 65% 15%;
+
+    /* Slate Neutrals - Clean, Modern, Professional */
+    --color-slate-50:  210 20% 98%;
+    --color-slate-100: 210 20% 96%;
+    --color-slate-200: 210 20% 92%;
+    --color-slate-300: 210 18% 85%;
+    --color-slate-400: 210 15% 70%;
+    --color-slate-500: 210 12% 55%;
+    --color-slate-600: 210 14% 45%;
+    --color-slate-700: 210 16% 35%;
+    --color-slate-800: 210 20% 20%;
+    --color-slate-900: 210 24% 10%;
+    --color-slate-950: 210 30% 6%;
+
+    /* Status Colors */
+    --color-danger:  0 84% 60%;
+    --color-success: 142 71% 45%;
+    --color-warning: 38 92% 50%;
+
+
+    /* ----------------------------------------------------
+       2. Semantic Variables (The "Where")
+       ---------------------------------------------------- */
+    
+    /* Backgrounds & Text */
+    --background: var(--color-slate-50);
+    --foreground: var(--color-slate-900);
+
+    /* Card / Surface */
+    --card: 0 0% 100%;
+    --card-foreground: var(--color-slate-900);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--color-slate-900);
+
+    /* Primary Actions */
+    --primary: var(--color-olive-600);
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary / Muted Actions */
+    --secondary: var(--color-olive-100);
+    --secondary-foreground: var(--color-olive-800);
+
+    --muted: var(--color-slate-100);
+    --muted-foreground: var(--color-slate-500);
+
+    /* Accents */
+    --accent: var(--color-olive-50);
+    --accent-foreground: var(--color-olive-900);
+
+    /* Statuses */
+    --destructive: var(--color-danger);
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: var(--color-slate-200);
+    --input: var(--color-slate-200);
+    --ring: var(--color-olive-500);
+
+    /* Corner Radius */
+    --radius: 0.75rem;
+
+    /* Sidebar Specifics */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: var(--color-slate-700);
+    --sidebar-primary: var(--color-olive-600);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--color-olive-100);
+    --sidebar-accent-foreground: var(--color-olive-900);
+    --sidebar-border: var(--color-slate-200);
+    --sidebar-ring: var(--color-olive-600);
+
+    /* Extras */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--color-olive-600)), hsl(var(--color-olive-400)));
+  }
+
+  .dark {
+    /* Dark Mode Mappings */
+    --background: var(--color-slate-950);
+    --foreground: var(--color-slate-50);
+
+    --card: var(--color-slate-900);
+    --card-foreground: var(--color-slate-50);
+
+    --popover: var(--color-slate-900);
+    --popover-foreground: var(--color-slate-50);
+
+    --primary: var(--color-olive-500);
+    --primary-foreground: var(--color-slate-950);
+
+    --secondary: var(--color-slate-800);
+    --secondary-foreground: var(--color-slate-50);
+
+    --muted: var(--color-slate-800);
+    --muted-foreground: var(--color-slate-400);
+
+    --accent: var(--color-slate-800);
+    --accent-foreground: var(--color-slate-50);
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--color-slate-800);
+    --input: var(--color-slate-800);
+    --ring: var(--color-olive-400);
+
+    /* Sidebar Dark */
+    --sidebar-background: var(--color-slate-950);
+    --sidebar-foreground: var(--color-slate-300);
+    --sidebar-primary: var(--color-olive-500);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--color-slate-800);
+    --sidebar-accent-foreground: var(--color-slate-50);
+    --sidebar-border: var(--color-slate-800);
+    --sidebar-ring: var(--color-olive-400);
+  }
+}
+
+@layer utilities {
+  .shadow-apple-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  }
+  .shadow-apple-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+  .shadow-apple-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  }
+  .shadow-apple-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  }
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
